@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="albums.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div class="container1">
+    <carousel interval="myInterval">
+      <slide ng-repeat="album in albums" active="album.active">
+        <img ng-src="{{album.imageURLLarge}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h3>{{album.title}}</h3>
+          <p>{{album.artist}}&nbsp;&nbsp;&nbsp;&nbsp;{{album.year}}</p>
+        </div>
+      </slide>
+    </carousel>
+</div>
+<div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" ng-repeat="album in albums" data-slide-to="{$index}" ng-class="{active:!$index}"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+      <div class="item" ng-class="{active:!$index}" ng-repeat="album in albums">
+        <img ng-src="{{album.imageURLLarge}}" alt="" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>{{album.title}}</h3>
+          <p>{{album.artist}}&nbsp;&nbsp;&nbsp;&nbsp;{{album.year}}</p>
+        </div>
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+        

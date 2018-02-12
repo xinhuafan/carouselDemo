@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="albums.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div class="row">
+    <div class="item  col-xs-4 col-lg-4" ng-repeat="album in albums">
+        <div class="thumbnail">
+            <div class="imgContainer">
+                <a href="#/lgAlbum/{{album.id}}"><img class="list-group-image" src={{album.imageURLSmall}} /></a>
+            </div>
+            <div class="grid-info">
+                <h4 class="list-group-item-heading">{{album.title}}</h4>
+                <p class="list-group-item-text">{{album.artist}}&nbsp;&nbsp;&nbsp;&nbsp;{{album.year}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+        
